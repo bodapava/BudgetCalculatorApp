@@ -3,16 +3,21 @@
     <form class="d-flex" role="amount">
       <input
         class="form-control me-2"
+        name="amount"
+        id="amount"
         type="number"
         placeholder="Amount"
         aria-label="Amount"
+        (change)="amountValue($event)"
       />
       <input
         class="form-control me-2"
         type="text"
         placeholder="Description"
         aria-label="Description"
+        (change)="descriptionMatch($event)"
       />
+
       <button class="btn btn-outline-success" type="submit">Add</button>
     </form>
   </div>
