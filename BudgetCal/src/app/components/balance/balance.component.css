@@ -1,3 +1,10 @@
 .bg-body-tertiary {
   height: 20vh;
+  text-align: center;
+}
+
+.amount {
+  color: aquamarine;
+  text-align: center !important;
+  margin-left: 60vh;
 }
