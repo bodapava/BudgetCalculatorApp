@@ -1,0 +1,17 @@
+.bg-body-tertiary {
+  /* height: 15vh; */
+  text-align: center;
+  justify-content: center;
+}
+
+.container-fluid {
+  justify-content: center !important;
+  text-align: center !important;
+
+  flex-shrink: inherit;
+  height: fit-content;
+}
+.form-switch {
+  margin: auto;
+  padding: inherit;
+}

@@ -1,0 +1,50 @@
+<div class="row">
+  <div class="col-6">
+    <h2 style="color: green">INCOME</h2>
+    <div class="d-grid gap-2" style="width: 60vh">
+      <div *ngIf="budgetList?.length">
+        <div *ngFor="let item of budgetList">
+          <div *ngIf="item.isIncome">
+            <div class="card">
+              <div class="card-body">
+                <div style="text-align: right">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    style="margin: 0"
+                  ></button>
+                </div>
+                {{ item.description }} {{ item.amount }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-6">
+    <h2 style="color: red">EXPENSES</h2>
+    <div class="d-grid gap-2" style="width: 60vh">
+      <div *ngIf="budgetList?.length">
+        <div *ngFor="let item of budgetList">
+          <div *ngIf="!item.isIncome">
+            <div class="card">
+              <div class="card-body">
+                <div style="text-align: right">
+                  <button
+                    type="button"
+                    class="btn-close"
+                    aria-label="Close"
+                    style="margin: 0"
+                  ></button>
+                </div>
+                {{ item.description }} {{ item.amount }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

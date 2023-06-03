@@ -1,0 +1,16 @@
+.row {
+  background-color: white !important;
+  justify-content: center;
+  text-align: center;
+}
+.card {
+  margin-bottom: 10px;
+}
+.card-body {
+  overflow: hidden;
+  object-fit: contain;
+  height: 10vh;
+  padding: 1vh;
+  font-size: medium;
+  margin-bottom: auto;
+}

@@ -1,6 +1,9 @@
-.homePage {
-  background-color: rgb(191, 184, 249);
+.homePage,
+.text-center,
+h2 {
+  background-color: rgb(191, 184, 249) !important;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin: 0;
 }
 
 .container {

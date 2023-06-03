@@ -1,9 +1,7 @@
 <div class="homePage">
   <h2 class="text-center">Budget Calculator</h2>
-  <app-balance [amount]="amount"></app-balance>
-  <app-navbar (amount)="printAmount($event)"></app-navbar>
 </div>
-<div class="container">
-  <app-expenses></app-expenses>
-</div>
-<div></div>
+<app-navbar
+  (amount)="printAmount($event)"
+  (description)="passDescription($event)"
+></app-navbar>

@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <form class="d-flex p-2" #budgForm="ngForm">
+    <div class="container-fluid d-flex">
+      <!-- <div class="form-group"> -->
+      <div class="form-check form-switch">
+        <input
+          class="form-check-input form-control"
+          type="checkbox"
+          role="switch"
+          checked
+          id="isIncome"
+          #isIncome="ngModel"
+          [(ngModel)]="item.isIncome"
+          name="isIncome"
+        />
+        <label class="form-check-label" for="flexSwitchCheckChecked"
+          >Income</label
+        >
+      </div>
+      <input
+        class="form-control me-2"
+        #amount="ngModel"
+        name="amount"
+        id="amount"
+        type="number"
+        placeholder="Amount"
+        aria-label="Amount"
+        [(ngModel)]="item.amount"
+      />
+      <input
+        class="form-control me-2"
+        #descp="ngModel"
+        [(ngModel)]="item.description"
+        type="text"
+        placeholder="Description"
+        aria-label="Description"
+        name="description"
+      />
+      <button
+        class="btn btn-outline-success"
+        type="submit"
+        (click)="addItem(budgForm.value)"
+      >
+        Add
+      </button>
+      <!-- </div> -->
+    </div>
+  </form>
+</nav>

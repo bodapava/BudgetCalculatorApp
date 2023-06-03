@@ -1,24 +1,10 @@
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <form class="d-flex" role="amount">
-      <input
-        class="form-control me-2"
-        name="amount"
-        id="amount"
-        type="number"
-        placeholder="Amount"
-        aria-label="Amount"
-        (change)="amountValue($event)"
-      />
-      <input
-        class="form-control me-2"
-        type="text"
-        placeholder="Description"
-        aria-label="Description"
-        (change)="descriptionMatch($event)"
-      />
-
-      <button class="btn btn-outline-success" type="submit">Add</button>
-    </form>
+<nav
+  class="navbar navbar-expand-lg bg-body-tertiary"
+  style="background-color: rgb(30, 46, 108) !important"
+>
+  <div class="amount" [style.color]="balanceColor ? 'aquamarine' : 'red'">
+    0
   </div>
 </nav>
+<app-addform (budgetListEvent)="sendBudgetList($event)"></app-addform>
+<app-budget-list [budgetList]="budgetList"></app-budget-list>

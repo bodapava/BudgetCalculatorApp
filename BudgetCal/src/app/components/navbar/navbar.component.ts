@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Budget } from 'src/app/models/budget';
 
 @Component({
   selector: 'app-navbar',
@@ -6,14 +7,16 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrls: ['./navbar.component.css'],
 })
 export class NavbarComponent {
-  @Output() amount: EventEmitter<any> = new EventEmitter();
-  @Output() description: EventEmitter<any> = new EventEmitter();
-  descriptionMatch(e: any) {
-    console.log(e.target.value);
-    this.description.emit(e.target.value);
+  balance!: any;
+  balanceColor: boolean = true;
+  budgetList!: Budget[];
+  changeBalance($event: any) {
+    console.log('balance', $event);
+    this.balance = $event;
+    this.balance > 0 ? (this.balanceColor = true) : (this.balanceColor = false);
   }
-  amountValue(e: any) {
-    console.log(e.target.value);
-    this.amount.emit(e.target.value);
+  sendBudgetList($event: any) {
+    console.log('sendSalaryList', $event);
+    this.budgetList = $event;
   }
 }
