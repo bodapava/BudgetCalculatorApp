@@ -19,7 +19,7 @@ export class TopNavComponent {
       );
       if (cur) console.log('budgetlist rem', cur);
       // this.calculateBalance(this.budgetList);
-      cur > 0 ? (this.balanceColor = true) : (this.balanceColor = false);
+      cur >= 0 ? (this.balanceColor = true) : (this.balanceColor = false);
     }
   }
 }

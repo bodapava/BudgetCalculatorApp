@@ -54,7 +54,7 @@
               <div class="card-body d-flex justify-content-between">
                 <p style="color: rgb(239, 13, 5)">{{ item.description }}</p>
                 <span style="background-color: rgb(236, 74, 53)">{{
-                  item.amount
+                  item.amount | currency : "USD" : true
                 }}</span>
               </div>
             </div>

@@ -41,9 +41,18 @@ export class AddformComponent implements OnChanges {
 
   addItem(f: Budget) {
     console.log('values are', f);
+    let i = 0;
     if (f.description && f.amount) {
-      this.budgetList.push(f);
+      for (let item of this.budgetList) {
+        if (item.description === f.description) {
+          alert('The budget item already exists, please add a new item!');
+          i += 1;
+        }
+      }
+      if (i == 0) this.budgetList.push(f);
+
       console.log(this.budgetList);
+
       this.budgetListEvent.emit(this.budgetList);
     }
     this.calculateBalance(this.budgetList);
@@ -66,6 +75,8 @@ export class AddformComponent implements OnChanges {
         console.log('balance', this.balance);
         this.balanceCal.emit(this.balance);
       }
+    } else {
+      this.balanceCal.emit((this.balance = 0));
     }
   }
 }

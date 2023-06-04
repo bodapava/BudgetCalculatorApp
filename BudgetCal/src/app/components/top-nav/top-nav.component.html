@@ -3,6 +3,6 @@
   style="background-color: rgb(30, 46, 108) !important"
 >
   <div class="amount" [style.color]="balanceColor ? 'aquamarine' : 'red'">
-    {{ balance }}
+    {{ balance | currency : "USD" : true }}
   </div>
 </nav>
