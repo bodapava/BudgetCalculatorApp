@@ -1,9 +1,10 @@
 .homePage,
 .text-center,
 h2 {
-  background-color: rgb(191, 184, 249) !important;
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background: linear-gradient(75deg, rgb(214, 180, 247), rgb(173, 203, 231));
+  font-family: "Courier New", Courier, monospace;
   margin: 0;
+  height: 5vh;
 }
 
 .container {

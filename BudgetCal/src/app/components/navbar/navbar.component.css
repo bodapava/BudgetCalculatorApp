@@ -1,10 +1,10 @@
-.row {
+/* .row {
   background-color: white !important;
   justify-content: center;
   text-align: center;
-}
+} */
 
-.container-fluid {
+/* .container-fluid {
   justify-content: center;
   text-align: center;
 }
@@ -12,17 +12,17 @@
   height: 15vh;
   text-align: center;
   justify-content: center;
-}
+} */
 
 app-addform {
   height: 15vh;
   text-align: center;
   justify-content: center;
 }
-.amount {
-  /* color: aquamarine; */
+/* .amount {
+  /* color: aquamarine; 
   text-align: center !important;
   font-size: medium;
   justify-content: center;
   font-size: 34px;
-}
+} */

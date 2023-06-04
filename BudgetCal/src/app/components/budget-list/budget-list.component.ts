@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Budget } from 'src/app/models/budget';
 
 @Component({
@@ -8,13 +8,12 @@ import { Budget } from 'src/app/models/budget';
 })
 export class BudgetListComponent {
   @Input() budgetList!: Budget[];
-  balance!:any;
-
-  constructor(){
-    if(this.budgetList.length){
-      for(let item in this.budgetList){
-        if(item.is)
-      }
-    }
+  @Output() itemRemovedEvent = new EventEmitter();
+  isHidden = false;
+  itemRemoved(item: Budget) {
+    console.log('item removed', item);
+    this.budgetList = this.budgetList.filter((items) => items != item);
+    console.log(this.budgetList);
+    this.itemRemovedEvent.emit(item);
   }
 }

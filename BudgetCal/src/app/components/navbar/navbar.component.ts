@@ -1,4 +1,13 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import {
+  AfterContentInit,
+  ChangeDetectorRef,
+  Component,
+  EventEmitter,
+  OnChanges,
+  OnInit,
+  Output,
+  SimpleChanges,
+} from '@angular/core';
 import { Budget } from 'src/app/models/budget';
 
 @Component({
@@ -8,15 +17,22 @@ import { Budget } from 'src/app/models/budget';
 })
 export class NavbarComponent {
   balance!: any;
-  balanceColor: boolean = true;
   budgetList!: Budget[];
-  changeBalance($event: any) {
-    console.log('balance', $event);
+  itemRemoved!: Budget;
+  public constructor(private changeDetector: ChangeDetectorRef) {}
+  ngAfterContentChecked(): void {
+    this.changeDetector.detectChanges();
+  }
+  changeBalance($event?: any) {
+    console.log('balance in navbar', $event);
     this.balance = $event;
-    this.balance > 0 ? (this.balanceColor = true) : (this.balanceColor = false);
   }
   sendBudgetList($event: any) {
     console.log('sendSalaryList', $event);
     this.budgetList = $event;
+  }
+  itemRemovedCal($event: Budget) {
+    console.log('rmeoved item', $event);
+    this.itemRemoved = $event;
   }
 }

@@ -2,10 +2,16 @@
   background-color: white !important;
   justify-content: center;
   text-align: center;
+  margin: 5vh;
 }
 .card {
   margin-bottom: 10px;
+  height: 6vh;
+  display: flex;
+  background-color: whitesmoke;
+  cursor: pointer;
 }
+
 .card-body {
   overflow: hidden;
   object-fit: contain;
@@ -13,4 +19,32 @@
   padding: 1vh;
   font-size: medium;
   margin-bottom: auto;
+  justify-content: space-between;
+}
+
+/* button {
+  overflow: hidden;
+  object-fit: contain;
+} */
+
+span {
+  border-radius: 1vh;
+  flex: 0.15;
+  font-family: "Courier New", Courier, monospace;
+}
+
+p {
+  font-family: "Courier New", Courier, monospace;
+}
+
+button {
+  position: absolute;
+  height: 12px;
+  width: 12px;
+  right: -6px;
+  top: -8px;
+  bottom: -5px;
+  border-radius: 60%;
+  background-color: rgb(30, 46, 108);
+  /* transform: scale(0); */
 }

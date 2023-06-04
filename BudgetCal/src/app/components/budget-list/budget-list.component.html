@@ -1,21 +1,29 @@
 <div class="row">
   <div class="col-6">
-    <h2 style="color: green">INCOME</h2>
+    <h2 style="color: green; font-family: 'Courier New', Courier, monospace">
+      INCOME
+    </h2>
     <div class="d-grid gap-2" style="width: 60vh">
       <div *ngIf="budgetList?.length">
         <div *ngFor="let item of budgetList">
           <div *ngIf="item.isIncome">
-            <div class="card">
-              <div class="card-body">
-                <div style="text-align: right">
-                  <button
-                    type="button"
-                    class="btn-close"
-                    aria-label="Close"
-                    style="margin: 0"
-                  ></button>
-                </div>
-                {{ item.description }} {{ item.amount }}
+            <div
+              class="card"
+              (mousenter)="isHidden = !isHidden"
+              (mouseleave)="isHidden = !isHidden"
+            >
+              <button
+                *ngIf="isHidden"
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+                (click)="itemRemoved(item)"
+              ></button>
+              <div class="card-body d-flex justify-content-between">
+                <p style="color: rgb(22, 159, 22)">{{ item.description }}</p>
+                <span style="background-color: rgb(125, 206, 125)">{{
+                  item.amount
+                }}</span>
               </div>
             </div>
           </div>
@@ -24,22 +32,30 @@
     </div>
   </div>
   <div class="col-6">
-    <h2 style="color: red">EXPENSES</h2>
+    <h2 style="color: red; font-family: 'Courier New', Courier, monospace">
+      EXPENSES
+    </h2>
     <div class="d-grid gap-2" style="width: 60vh">
       <div *ngIf="budgetList?.length">
         <div *ngFor="let item of budgetList">
           <div *ngIf="!item.isIncome">
-            <div class="card">
-              <div class="card-body">
-                <div style="text-align: right">
-                  <button
-                    type="button"
-                    class="btn-close"
-                    aria-label="Close"
-                    style="margin: 0"
-                  ></button>
-                </div>
-                {{ item.description }} {{ item.amount }}
+            <div
+              class="card"
+              (mousenter)="isHidden = !isHidden"
+              (mouseleave)="isHidden = !isHidden"
+            >
+              <button
+                *ngIf="isHidden"
+                type="button"
+                class="btn-close"
+                aria-label="Close"
+                (click)="itemRemoved(item)"
+              ></button>
+              <div class="card-body d-flex justify-content-between">
+                <p style="color: rgb(239, 13, 5)">{{ item.description }}</p>
+                <span style="background-color: rgb(236, 74, 53)">{{
+                  item.amount
+                }}</span>
               </div>
             </div>
           </div>
