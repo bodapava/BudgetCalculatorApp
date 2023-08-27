@@ -58,7 +58,7 @@ export class AddformComponent implements OnChanges {
     this.calculateBalance(this.budgetList);
   }
   calculateBalance(budgetList: Budget[]) {
-    if (this.budgetList?.length) {
+    if (budgetList?.length) {
       console.log('budgetlist', this.budgetList);
       this.expBalance = 0;
       this.incBalance = 0;
@@ -77,6 +77,7 @@ export class AddformComponent implements OnChanges {
       }
     } else {
       this.balanceCal.emit((this.balance = 0));
+      this.item = {};
     }
   }
 }
